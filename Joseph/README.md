@@ -1,7 +1,9 @@
 # LineList vs Array
 
 ## График
-![](Joseph/plots/result.png)
+Сравнение производительности:
+
+![](https://github.com/oneklazz/CPP/blob/main/Joseph/plots/result.png)
 
 ## Результаты
 

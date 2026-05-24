@@ -3,7 +3,7 @@
 
 class Rational {
 private:
-    int num; // числ
+    int num; // числит
     int den; // знамен
 
     void reduce(); // сокр дроби

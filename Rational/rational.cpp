@@ -106,7 +106,7 @@ Rational::operator double() const {
     return static_cast<double>(num) / den;
 }
 
-// приближенный квадр корень
+// приближенный квадратный корень
 Rational Rational::sqrt(const Rational& r) {
     double val = static_cast<double>(r);
     double root = std::sqrt(val);

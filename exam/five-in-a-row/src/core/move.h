@@ -12,6 +12,9 @@ struct move {
     std::string time;    // временная метка
     bool is_hint;        // true, если ход был подсказкой
 
+    // конструктор по умолч
+    move() : number(0), symbol('_'), row(0), col(0), time(""), is_hint(false) {}
+
     // коннструктор для удобства
     move(int num, char sym, int r, int c, const std::string& t, bool hint = false)
         : number(num), symbol(sym), row(r), col(c), time(t), is_hint(hint) {}

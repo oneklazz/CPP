@@ -9,12 +9,13 @@
 // класс управляет игрой
 class game {
 public:
+    // принимает двух игроков и стратегию
     game(player& player_x, player& player_o, const computer& strategy);
     void run();
 
 private:
+    // возвр текущее время в виде строки (эт для меток ходов)
     std::string get_current_time() const;
-    bool try_command(int row, int col, int& move_number);
 
     board board_;
     history history_;

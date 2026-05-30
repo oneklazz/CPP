@@ -2,7 +2,7 @@
 #include <ctime>
 #include <algorithm>
 
-// возвращает лучший ход для заданного символа
+// возвр лучший ход для заданного символа
 move computer::get_best_move(const board& b, char player_symbol, int move_number) const {
     int best_row = -1, best_col = -1;
     int best_score = -1;

@@ -13,6 +13,6 @@ int main() {
     game game(human, computer, strategy);
     game.run();
 
-    std::cout << "\nигра завершена, не забудьте сохранить историю, если еще не сделали.\n";
+    std::cout << "\nигра завершена\n";
     return 0;
 }

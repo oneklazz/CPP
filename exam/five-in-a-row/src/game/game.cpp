@@ -4,6 +4,8 @@
 #include "../players/human_player.h"
 #include <iostream>
 #include <ctime>
+#include <thread>
+#include <chrono>
 
 // конструктор, сохр игроков и стратегию
 game::game(player& player_x, player& player_o, const computer& strategy)
@@ -50,6 +52,8 @@ void game::run() {
             board_.place(current_move.row, current_move.col, current_move.symbol);
             std::cout << "компьютер поставил " << current_move.symbol
                       << " на (" << current_move.row + 1 << ", " << current_move.col + 1 << ")\n";
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(500)); // добавил задержку на 0.5 сек
         }
 
         history_.add_move(current_move);

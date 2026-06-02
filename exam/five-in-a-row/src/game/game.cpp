@@ -58,13 +58,14 @@ void game::run() {
 
         history_.add_move(current_move);
 
-        if (board_.check_win(current_move.row, current_move.col, current_move.symbol)) {
+        if (board_.check_win(current_move.row, current_move.col, current_move.symbol) ||
+            board_.check_loop_win(current_move.row, current_move.col, current_move.symbol)) {
             board_.display();
             std::cout << "игрок " << current_move.symbol << " победил!\n";
             history_.save_to_file("game_history.txt");
             game_over = true;
             break;
-        }
+            }
 
         if (board_.is_full()) {
             board_.display();

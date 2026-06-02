@@ -18,6 +18,7 @@ public:
     bool is_valid(int row, int col) const;
     bool place(int row, int col, char symbol); // теперь возвращает bool
     bool check_win(int row, int col, char symbol) const;
+    bool check_loop_win(int row, int col, char symbol) const;
     bool is_full() const;
     char get_symbol_at(int row, int col) const;
 

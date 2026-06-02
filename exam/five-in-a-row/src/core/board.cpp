@@ -70,6 +70,27 @@ bool board::check_win(int row, int col, char symbol) const {
     return false;
 }
 
+// проверяет победу, цилиндр
+bool board::check_loop_win(int row, int col, char symbol) const {
+    if (row < 0 || row >= SIZE || col < 0 || col >= SIZE) return false;
+    if (cells_[row][col].get_symbol() != symbol) return false;
+
+    int count = 1;
+    // вправо с замыканием
+    for (int step = 1; step < 5; ++step) {
+        int nc = (col + step + SIZE) % SIZE;
+        if (cells_[row][nc].get_symbol() == symbol) ++count;
+        else break;
+    }
+    // влево с замыканием
+    for (int step = 1; step < 5; ++step) {
+        int nc = (col - step + SIZE) % SIZE;
+        if (cells_[row][nc].get_symbol() == symbol) ++count;
+        else break;
+    }
+    return count >= 5;
+}
+
 // заполнено ли поле полностью
 bool board::is_full() const {
     for (int i = 0; i < SIZE; ++i) {
